@@ -1,0 +1,13 @@
+.advantages
+  .container
+    h3.advantages__title.block-title Преимущества
+
+    ul.advantages__list
+      each item, i in ourProducts
+        li.advantages__item
+          .advantages__bg
+            img.advantages__icon(src="images/advantages/icon-" + (i+1) + ".png")
+            .advantages__text Описание преимущества или какая-то плюшка про нас
+
+          .advantages__child-wrapper
+            img.advantages__child(src="images/advantages/child-" + (i+1) + ".png")

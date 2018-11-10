@@ -1,0 +1,100 @@
+.footer
+  background-color: #374053
+  padding-bottom: 30px
+  position: relative
+  margin-top: 60px @md 120px
+
+  &:before
+    content: ""
+    display: block
+    background: resolve("footer/bg.png") center top / cover
+    height: 90px
+    position: absolute -90px 0 null 0
+
+  &:after
+    content: ""
+    display: block
+    background: resolve("decorate/icon-3.svg") center / cover
+    size: 111px 300px @md 230px 620px
+    position: absolute 0 0 null -15px
+    transform: translateY(-102%)
+
+  &-wrapper
+    box: vertical
+
+  &-top
+    box: vertical center @xs horizontal space-between
+    flex-wrap: @md-down wrap
+    margin-top: 25px @md 40px @lg 55px
+    text: center @xs left
+
+    &__logo
+      width: @md-down 100%
+
+      &-img
+        display: block
+        margin: * auto
+        margin-bottom: @md-down 30px
+        width: @md-down 90px
+
+    &__title
+      text: 700 18px #fff
+
+    &__list
+      margin-top: 22px
+
+      & > *
+        margin-bottom: 6px
+
+    &__nav
+      margin-bottom: @md-down 30px
+
+      &:nth-of-type(1), &:nth-of-type(3)
+        display: @md-down none
+
+    &__link
+      text: 16px #fff
+      opacity: .6
+      transition: $transition
+      text-decoration: none
+
+    &__link:hover
+      opacity: .9
+
+    &__phone-span,
+    &__social-find-us
+      text: 400 16px #fff
+
+    &__phone-span
+      display: block
+      line-height: 25px
+
+    &__social-find-us
+      margin-top: 46px
+      text-align: right
+      line-height: 1.3
+      text: center @xs left
+
+    &__social-link
+      opacity: .6
+      transition: $transition
+
+    &__social-link:hover
+      opacity: 1
+
+    &__social-wrapper
+      box: center space-between
+      margin-top: 15px
+      padding-bottom: 47px
+
+    &__social-img
+      display: block
+
+  &-bottom
+    text: center
+
+    &__span
+      text: 12px 1.3 #fff
+      display: block
+      padding: @md-down * 10%
+      margin-top: 0 @md 50px

@@ -1,0 +1,262 @@
+.catalog
+  padding: 10px * @md 30px *
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute -40px null null -40px
+    background: resolve("decorate/lines-1.png") no-repeat left top / 80%
+    size: size("decorate/lines-1.png")
+    display: none
+
+  &__title
+    text: center
+    margin-bottom: 25px @md 44px
+
+  &__years
+    margin-bottom: 15px @md 40px
+    display: none @md block
+
+    &-list
+      box: middle @md space-between
+      flex-wrap: @md-down wrap
+      margin: @md-down * -28px
+
+    &-item
+      width: calc(50% - 20px) @md 100%
+      margin: @md-down 0 5px 10px
+
+      & + &
+        margin-left: @md 10px @lg 24px
+
+    &-btn
+      width: 100%
+      text: @md-down 12px
+      padding: @md-down 6px 20px
+      white-space: nowrap
+
+  &__row
+    box: left
+    flex-wrap: @md-down wrap
+
+  &__aside
+    width: 100% @md 250px @lg 310px
+    min-width: 250px @lg 310px
+    margin-right: 0 @md 20px @lg 25px
+    position: relative
+    display: @md-down flex
+    justify-content: space-between
+    margin-bottom: 20px @md 0
+
+    &-btn
+      width: auto @md 100%
+      margin-bottom: 0 @md 30px @lg 36px
+      text: 14px @md 18px @lg 22px
+      font-family: $font-decorate
+      padding: 7px 23px 8px @md 13px 23px @lg 13px 34px
+      white-space: nowrap
+      position: relative
+      z-index: 3
+      border-radius: @md-down 21px
+
+      &.open .icon
+        transform: rotate(-180deg)
+
+      .icon
+        size: @md-down 15px @lg-down 19px
+        margin: @md-down 0 0 -4px 15px @lg-down 0 0 -5px 16px
+
+      &-settings
+        size: 42px
+        border-radius: 50%
+        padding: 0
+        display: block @md none
+
+  &__category
+    display: block
+
+    &-title
+      text: $primary 22px 1.3 center @md 22px left @lg 25px
+      font-family: $font-decorate
+      margin: @md-down 20px *
+
+  &__main
+    width: 100%
+
+  &__panel
+    box: center space-between
+
+  &__sorting
+    box: middle @md center
+    flex-wrap: @md-down wrap
+
+    &-title
+      margin-right: 0 @md 30px
+      display: block @md none @xl block
+      width: @md-down 100%
+      text: 14px center @md 16px
+      margin-bottom: @md-down 7px
+
+    &-btn
+      text: 14px @md 16px
+      margin: @md-down 0 10px 7px
+
+      & + &
+        margin-left: @md 20px
+
+    &-icon
+      margin: 0 0 -3px 7px
+
+  &__search
+    max-width: 280px
+    min-width: @xl 280px
+    margin-left: 20px
+    align-items: center
+    display: none @md flex
+
+    .input
+      width: 100%
+
+    &-input
+      width: 100%
+      border-right: 0
+      border-radius: 2px 0 0 2px
+      padding-right: 0
+
+    &-btn
+      border-right: 0
+      border-radius: 0 2px 2px 0
+      padding: 4px 10px
+
+  &__items
+    box: wrap
+    margin-left: 0 @sm -6px
+    margin-right: 0 @sm -9px
+    margin-top: 18px @lg 26px
+
+  &__item
+    width: 100% @md calc(50% - 16px) @xl calc(33.333% - 16px)
+    margin: 8px
+    background: #fff
+    border-radius: 4px
+    border: 1px solid $border-color
+    transition: .3s ease
+
+    &:hover
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05)
+      transform: @md scale(1.03)
+
+      ^&-title
+        text: @md 600 $primary
+        transform: @md scale(1.05)
+
+    &-link
+      text-decoration: none
+      display: block
+      padding: 25px 20px
+      -webkit-tap-highlight-color: transparent
+
+    &-img
+      display: block
+
+      &-wrapper
+        box: middle
+        margin-bottom: 25px
+
+    &-title
+      text: 15px $text-dark-color
+      transition: .3s ease
+      transform-origin: left
+
+    &-price
+      margin: 6px * 18px
+      text: 700 24px 1 $text-dark-color
+      box: center
+
+      &-rub
+        margin-left: 5px
+        position: relative
+
+        &:before
+          content: ""
+          display: block
+          position: absolute 69% 3px null 0
+          border-bottom: 1px solid $text-dark-color
+
+    &-pre-order
+      text: 400 14px #ffd507
+      margin-left: auto
+
+    &-btns
+      box: space-between
+
+    &-btn-cart
+      padding: * 6px
+
+  &__categories
+    border: 1px solid $primary
+    border-top-width: 1px @md 0
+    background: #fff
+    border-radius: 4px @md 0 0 4px 4px
+    padding: 10px 20px
+    position: absolute null 0 null 0
+    top: 56px @lg 61px
+    z-index: 2
+    display: none
+
+    &.open
+      display: block
+
+    &-item
+
+      @for $i from 1 to 4
+        &:nth-child($i)
+          ^^&-link
+            &:before
+              background: resolve("icons/category-$i.png")
+              size: size("icons/category-$i.png")
+
+    &-link
+      text: 18px $text-dark-color
+      text-decoration: none
+      font-family: $font-decorate
+      padding: 7px 0
+      box: center
+
+      &:before
+        content: ""
+        margin-right: 17px
+
+      &:hover
+        text-decoration: underline
+
+    &-sub
+
+      &-list
+        margin: 1px 38px 12px
+        box: vertical left
+
+      &-item
+        position: relative
+        display: inline-block
+
+        &.active
+
+          ^^&-link
+            text: #010101
+
+            &:after
+              content: ""
+              position: absolute null 0 3px 0
+              height: 3px
+              background: resolve("icons/active.png")
+
+      &-link
+        text: 15px #838383
+        text-decoration: none
+        padding: 7px 0
+        display: block
+        transition: $transition
+
+        &:hover
+          text: #010101

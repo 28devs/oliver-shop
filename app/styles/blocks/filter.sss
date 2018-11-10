@@ -1,0 +1,88 @@
+.filter
+  background: #fff
+  border-radius: 4px
+  border: 1px solid
+  border-color: $primary @md $border-color
+  display: none @md block
+  position: @md-down absolute 61px 0 null 0
+  z-index: 9
+
+  &.open
+    display: block
+
+  &__title
+    text: $text-dark-color 18px @lg 22px
+    font-family: $font-decorate
+    padding: 12px 15px @lg 12px 33px
+    border-bottom: 1px solid $border-color
+    display: @md-down none
+
+  &__sub-title
+    text: 600 16px $text-dark-color center @md 400 16px $text-dark left @lg 18px
+    margin-bottom: 15px @md 5px
+
+  &__wrapper
+    padding: 17px 33px @md 12px 15px @lg 12px 33px
+
+  &__years
+    display: block @md none
+
+  &__list
+    box: vertical
+
+  &__price
+    margin-top: 15px
+
+    &-elem
+      margin: * 5px
+
+    &-wrapper
+      box: space-between
+      margin: 20px * 27px *
+
+    &-input
+      width: 68px
+      padding: 3px 0 3px 7px
+      text: center
+
+  &__input
+    display: none
+
+    &:checked + ^&__label:before
+      background: $primary
+      border-color: $primary
+
+    &:checked + ^&__label
+      text: 600 $text-dark-color
+
+  &__label
+    text: #838383
+    cursor: pointer
+    box: center
+    user-select: none
+    margin-bottom: 2px
+
+    &:hover
+      text: $text-dark-color
+
+      &:before
+        border-color: $text-dark-color
+
+    &:before
+      content: ""
+      display: block
+      size: 8px
+      border-radius: 50%
+      border: 1px solid #bbbbbb
+      margin-right: 9px
+
+  &__footer
+    padding: 12px 33px 17px @md 12px 15px 17px @lg 12px 33px 17px
+    border-top: 1px solid $border-color
+
+    &-wrapper
+      box: space-between
+
+    &-title
+      text: #b9b9b9 14px
+      margin-bottom: 8px

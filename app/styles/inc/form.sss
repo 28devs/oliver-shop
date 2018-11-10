@@ -1,0 +1,47 @@
+.input
+
+  &__elem
+    border: 1px solid #D3D9E4
+    border-color: #D3D9E4
+    border-radius: 2px
+    padding: 6px 16px
+    outline: 0
+    text: $text-dark 14px
+    font-family: $font
+    width: 100%
+    transition: $transition
+
+    &::placeholder
+      text: #adadad
+
+    &:focus
+      border-color: $primary
+      box-shadow: inset 0px 1px 2px #D9D9D9
+
+  &--error
+    ^&__elem
+      border-color: #FF0F00
+      text: #FF0F00
+
+      &::placeholder
+        text: #FF0F00
+
+.input-counter
+  display: inline-flex
+  border: 1px solid #e8e8e8
+  border-radius: 3px
+
+  &__minus, &__plus
+    size: 28px 26px
+    cursor: pointer
+    text: 18px 24px center
+    user-select: none
+
+  &__input
+    size: 28px 26px
+    border-width: 0 1px 0 1px
+    border-color: #e8e8e8
+    border-style: solid
+    background: #f7f7f7
+    text: center
+    outline: 0

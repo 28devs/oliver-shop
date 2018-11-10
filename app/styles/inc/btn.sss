@@ -1,0 +1,95 @@
+.btn
+  padding: 5px 13px
+  text: #fff 600 14px 1.5 center
+  text-decoration: none
+  font-family: $font
+  border: 2px transparent solid
+  outline: 0
+  cursor: pointer
+  transition: $transition
+  border-radius: 4px
+  background: $primary
+  user-select: none
+  display: inline-block
+  -webkit-tap-highlight-color: transparent
+
+  .icon
+    transition: $transition
+
+  &:hover
+    background: $primary-dark
+    border-color: $primary-dark
+    color: #fff
+
+  &:active
+    color: #fff
+    background: $primary-dark-2
+    border-color: $primary-dark-2
+
+  &--outline
+    background: transparent
+    border-color: $primary
+    color: $primary
+
+  &--secondary
+    background: $secondary
+    border-color: $secondary
+    color: $secondary
+
+    &:hover
+      background: $secondary-dark
+      border-color: $secondary-dark
+
+    &:active
+      color: #fff
+      background: $secondary-dark-2
+      border-color: $secondary-dark-2
+
+  &--outline&--secondary
+    background: #fff
+    border-color: $secondary
+    color: $text-dark-color
+    opacity: .6
+
+    &:hover, &.active
+      background: #fff
+      border-color: $secondary
+      color: $text-dark-color
+      opacity: 1
+
+    &.active
+      box-shadow: inset 0 0 0 2px $secondary
+
+  &--light
+    background: transparent
+    border-color: transparent
+    color: #b9b9b9
+
+    &:hover
+      background: #f7f7f7
+      border-color: #f7f7f7
+      color: #b9b9b9
+
+    &:active
+      background: #e8e8e8
+      border-color: #e8e8e8
+
+  &--sorting
+    text: 400 16px $primary
+    padding: 0
+    border-bottom: 1px dashed $primary
+    background: transparent
+    white-space: nowrap
+
+    &:hover
+      background: transparent
+      text: $text-dark
+      border-color: transparent
+      border-bottom-color: $text-dark
+
+      .icon
+        background: svg-load("icons/arrow-down.svg" fill: $text-dark)
+
+  &--large
+    padding: 14px 20px
+    text: 16px @lg 18px

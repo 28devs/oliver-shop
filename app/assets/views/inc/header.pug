@@ -1,0 +1,63 @@
+header.header
+  .header__container.container
+    .header__mobile-menu
+      .header__mobile-menu-line
+      .header__mobile-menu-line
+      .header__mobile-menu-line
+
+    nav.header__nav
+      ul.header__nav-list
+        li.header__nav-item
+          a.header__nav-link(href="#!") Каталог
+        li.header__nav-item
+          a.header__nav-link(href="#!") Покупателям
+            i.header__nav-icon.icon.icon--arrow-down
+        li.header__nav-item
+          a.header__nav-link(href="#!") Контакты
+
+        li.header__nav-footer
+          a.header__nav-phone(href="tel:+79155815872") +7 (915) 581-58-72
+
+          button.header__nav-btn.btn.btn--outline заказать звонок
+
+    a.header__logo(href="#!")
+
+    .header__panel
+      a.header__phone(href="tel:+79155815872") +7 (915) 581-58-72
+
+      button.header__btn.btn.btn--outline заказать звонок
+
+      .header__basket-wrapper
+        .header__basket-number 1
+
+        .header__basket
+          .header__basket-text Корзина
+          .header__basket-price
+            span 700 
+            span &#8381;
+
+        .header__popup
+          .header__popup-close.icon.icon--close-popup
+          .header__popup-list
+            each i in [1,2,3]
+              .header__popup-item
+                a.header__popup-img-wrapper(href="#!")
+                  img.header__popup-img(src="images/items/item-1.jpg" alt="Большой синий дом")
+
+                .header__popup-detail
+                  a.header__popup-title(href="#!") Качалка Овечка Ламберт
+
+                  .header__popup-wrapper
+                    .input-counter
+                      .input-counter__minus -
+                      input.input-counter__input(type="text" value="1" readonly)
+                      .input-counter__plus +
+
+                    .header__popup-price 6 700 
+                      .header__popup-price-rub P
+
+          .header__popup-footer
+            .header__popup-text Итого:
+            .header__popup-total 6 700 
+              .header__popup-total-rub P
+            a.btn(href="#!") К оформлению

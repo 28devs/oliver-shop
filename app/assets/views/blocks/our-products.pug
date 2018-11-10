@@ -1,0 +1,17 @@
+.our-products
+  .our-products__container.container
+    h3.our-products__title.block-title наши товары
+
+    .our-products__scroll
+      ul.our-products__list
+        each item, i in ourProducts
+          li.our-products__item
+            a.our-products__link(href="#!")
+              .our-products__category= item
+              .our-products__img-wrapper
+                img.our-products__img(src="images/our-products/" + (i+1) + ".png")
+
+  .our-products__decorate.our-products__decorate--to-right
+  .our-products__decorate.our-products__decorate--to-left
+
+

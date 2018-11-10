@@ -1,0 +1,33 @@
+include ../inc/var.pug
+include ../inc/mixins.pug
+block onload
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    block meta
+      meta(name="description", content= meta.description)
+      meta(itemprop="name" content= meta.title)
+      meta(itemprop="description" content= meta.description)
+      meta(itemprop="image" content= meta.image)
+      meta(property="og:title" content= meta.title)
+      meta(property="og:site_name" content= meta.title)
+      meta(property="og:url" content= meta.url)
+      meta(property="og:description" content= meta.description)
+      meta(property="og:image" content= meta.image)
+    block title
+      title Oliver
+    block head
+      link(href="styles/libs.min.css" rel="stylesheet")
+      link(href="styles/main.css" rel="stylesheet")
+      link(rel="shortcut icon" href="/images/icons/favicon.png" type="image/png")
+
+  body
+    include ../inc/header.pug
+    block content
+    include ../inc/footer.pug
+
+    block foot
+      script(type="text/javascript" src="scripts/libs.min.js")
+      script(type="text/javascript" src="scripts/main.js")

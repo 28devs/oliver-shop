@@ -1,0 +1,105 @@
+.catalog
+  .container
+    h3.catalog__title.block-title каталог
+
+    .catalog__years
+      ul.catalog__years-list
+        each item, i in catalogYears
+          li.catalog__years-item
+            button.catalog__years-btn.btn.btn--secondary.btn--outline.btn--large(class=[i === 1 ? 'active' : ''])= item
+
+    .catalog__row
+      aside.catalog__aside
+        button.catalog__aside-btn.btn Категории товаров
+          i.icon.icon--arrow-down-large
+
+        button.catalog__aside-btn-settings.btn
+          i.icon.icon--settings
+
+        .catalog__categories
+          ul.catalog__categories-list
+            each category in categories
+              li.catalog__categories-item
+                a.catalog__categories-link(href="#!")= category.title
+
+                if category.childs
+                  ul.catalog__categories-sub-list
+                    each child, i in category.childs
+                      li.catalog__categories-sub-item(class=[ i === 2 ? "active" : "" ])
+                        a.catalog__categories-sub-link(href="#!")= child.title
+
+        .filter
+          .filter__title Фильтр:
+
+          .filter__wrapper
+            .filter__years.catalog__years
+              .filter__sub-title Возраст:
+
+              ul.catalog__years-list
+                each item, i in catalogYears
+                  li.catalog__years-item
+                    button.catalog__years-btn.btn.btn--secondary.btn--outline.btn--large(class=[i === 1 ? 'active' : ''])= item
+
+            .filter__sub-title Цена:
+            .filter__price
+              .filter__price-elem
+
+              .filter__price-wrapper
+                input.filter__price-input.input__elem(type="number" name="priceMin" value="2800" step="100" min="2800" max="28000")
+                input.filter__price-input.input__elem(type="number" name="priceMax" value="28000" step="100" min="2800" max="28000")
+
+            .filter__sub-title Бренд:
+
+            .filter__list
+              each item, i in filterBrands
+                input.filter__input(type="checkbox" id="filter-" + i)
+                label.filter__label(for="filter-" + i)= item
+
+          .filter__footer
+            .filter__footer-title Найдено: 4
+
+            .filter__footer-wrapper
+              button.btn Показать
+              button.btn.btn--light
+                i.icon.icon--close
+                | Сбросить
+
+      section.catalog__main
+        h4.catalog__category-title Бизидомики
+
+        .catalog__panel
+          .catalog__sorting
+            .catalog__sorting-title Сортировать по:
+
+            each sort in catalogSorting
+              button.catalog__sorting-btn.btn.btn--sorting= sort
+                i.catalog__sorting-icon.icon.icon--arrow-down
+
+          form.catalog__search(method="get" action="/")
+            .input
+              input.catalog__search-input.input__elem(type="text" name="search" placeholder="Поиск по товарам")
+
+            button.catalog__search-btn.btn
+              i.icon.icon--search
+
+        .catalog__items
+          each item in [1,2,3,4,5]
+            article.catalog__item
+              a.catalog__item-link(href="#!" + item)
+                .catalog__item-img-wrapper
+                  img.catalog__item-img(src="images/items/item-1.jpg" alt="Большой синий дом")
+                .catalog__item-title Большой синий дом
+                .catalog__item-price 12 900
+                  span.catalog__item-price-rub P
+                  span.catalog__item-pre-order По предзаказу!
+
+                .catalog__item-btns
+                  button.btn
+                    i.icon.icon--click
+                    | Купить в 1 клик
+
+                  button.catalog__item-btn-cart.btn.btn--light
+                    i.icon.icon--cart
+
+
+

@@ -1,0 +1,104 @@
+.glide
+
+  &__track, &__container, &__slide, &__slides
+    height: 100%
+
+  &__bullets
+    box: middle
+
+  &__bullet
+    size: 16px
+    border-radius: 50%
+    background: $primary
+    cursor: pointer
+
+    &:hover
+      background: $primary-dark
+
+    &--active
+      background: #fff !important
+      box-shadow: inset 0 0 0 1px $primary
+
+    & + &
+      margin-left: 16px
+
+.wide-slider
+  height: 480px @md 650px
+  position: relative
+  background: #f0f0f1
+
+  &:after
+    content: ""
+    position: absolute null 0 0 0
+    background: resolve("slides/wave.png") center top / cover
+    height: 45px @xl 60px
+    z-index: 2
+
+  &:before
+    content: ""
+    position: absolute null 0 -60px 0
+    height: 60px
+    background: linear-gradient(to bottom, #fff, transparent)
+
+  &__prev, &__next
+    size: 38px @md 59px
+    cursor: pointer
+    border-radius: 50%
+    border: 2px solid $text-dark-color
+    background: svg-load("icons/arrow-right.svg", fill: $text-dark-color) no-repeat center / 24px
+    opacity: .5
+    transition: $transition
+    position: absolute
+    top: auto @md 45%
+    bottom: 77px @md auto
+    z-index: 3
+
+    &:hover
+      opacity: .8
+
+  &__prev
+    transform: scale(-1)
+    left: 15px @md 30px
+
+  &__next
+    right: 15px @md 30px
+
+  &__slider
+    height: 100%
+    position: relative
+    z-index: 1
+
+  &__slide
+    background-position: center
+    background-size: cover
+
+  &__bullets
+    margin-top: -106px
+    position: relative
+    z-index: 2
+
+  &__title
+    text: 32px @md 45px @lg 50px
+    font-family: $font-decorate
+
+  &__wrapper
+    padding: 80px 20px @md 160px * * 140px
+    text: center @md left
+    background-image: @md-down radial-gradient(rgb(255, 255, 255, .5) 10%, transparent 30%)
+
+  &__text
+    text: 16px @md 18px
+    margin: 7px * 30px @md 10px * 35px
+    box: center middle @md top
+
+    &:before
+      content: ""
+      display: none @md block
+      background: resolve("icons/lamp.png")
+      size: size("icons/lamp.png")
+      margin-right: 20px
+      margin-top: -4px
+
+  &__btn
+    text: 14px @md 16px @lg 18px
+    padding: 7px 25px @md 10px 40px

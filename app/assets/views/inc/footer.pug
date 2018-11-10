@@ -1,0 +1,49 @@
+footer.footer
+  div.container
+    div.footer-wrapper
+      div.footer-top
+        div.footer-top__logo
+          img.footer-top__logo-img(src="images/footer/footerLogo.png", alt="Осьминог Оливер")
+        nav.footer-top__nav
+          h3.footer-top__title Меню:
+          ul.footer-top__list
+            li.footer-top__item
+              a.footer-top__link(href="/") Главная
+            li.footer-top__item
+              a.footer-top__link(href="/") Каталог
+            li.footer-top__item
+              a.footer-top__link(href="/") Контакты
+            li.footer-top__item
+              a.footer-top__link(href="/") Отзывы
+        nav.footer-top__nav
+          h3.footer-top__title Товары:
+          ul.footer-top__list
+            each cat in categories
+              li.footer-top__item
+                a.footer-top__link(href="/category/" + cat.key) #{cat.title}
+        nav.footer-top__nav
+          h3.footer-top__title Интересные статьи:
+          ul.footer-top__list
+            li.footer-top__item
+              a.footer-top__link(href="/") Статья №1
+            li.footer-top__item
+              a.footer-top__link(href="/") Статья №2
+            li.footer-top__item
+              a.footer-top__link(href="/") Статья №3
+            li.footer-top__item
+              a.footer-top__link(href="/") Статья №4
+        div.footer-top__info-about
+          div.footer-top__phone
+            span.footer-top__phone-span 8 805 678 56 67
+            span.footer-top__phone-span 8 805 678 56 67
+          div.footer-top__social
+            h4.footer-top__social-find-us Ищите нас:
+            div.footer-top__social-wrapper
+              a.footer-top__social-link(href="#!")
+                img.footer-top__social-img(src="images/footer/insta.png")
+              a.footer-top__social-link(href="#!")
+                img.footer-top__social-img(src="images/footer/bk.png")
+              a.footer-top__social-link(href="#!")
+                img.footer-top__social-img(src="images/footer/fb.png")
+      div.footer-bottom
+        span.footer-bottom__span Copyright &copy; 2018. Осьминог Оливер. Политика конфиденциальности.

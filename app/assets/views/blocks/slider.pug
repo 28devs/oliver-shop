@@ -1,0 +1,18 @@
+.wide-slider
+  .wide-slider__slider.glide
+    div(data-glide-el="controls")
+      .wide-slider__prev(data-glide-dir="<")
+      .wide-slider__next(data-glide-dir=">")
+
+    .glide__track(data-glide-el="track")
+      .wide-slider__slides.glide__slides
+        each slide in wideSlider
+          .wide-slider__slide.glide__slide(style="background-image: url(images/slides/" + slide.bg + ")")
+            .glide__container.container
+              .wide-slider__wrapper
+                .wide-slider__title= slide.title
+                .wide-slider__text!= slide.text
+                .wide-slider__btn.btn Подробнее
+                  i.icon.icon--long-arrow
+
+    .wide-slider__bullets.glide__bullets(data-glide-el="controls[nav]")

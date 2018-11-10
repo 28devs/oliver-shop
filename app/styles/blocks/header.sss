@@ -1,0 +1,242 @@
+.header
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .1))
+  background: #fff
+  height: 60px @md 80px @lg 83px
+  z-index: 9
+  position: relative
+
+  &__container
+    box: center space-between
+    position: relative
+    height: 100%
+
+  &__mobile-menu
+    display: block @lg none
+    size: 26px 19px
+    box: vertical space-between
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    user-select: none
+
+    &-line
+      size: 100% 3px
+      background: $primary
+      border-radius: 2px
+      transition: transform $transition
+
+    &.open
+      ^&-line
+        &:nth-child(1)
+          transform: rotate(45deg) translate(4px, 4px)
+
+        &:nth-child(2)
+          width: 0
+
+        &:nth-child(3)
+          transform: rotate(-45deg) translate(7px, -7px)
+
+  &__nav
+    width: 250px @lg calc(50% - 130px)
+    max-width: @lg 450px
+    display: none @lg block
+    position: @lg-down absolute
+    top: 60px @md 80px
+    left: -8px @md 0
+    background: #fff
+    padding: @lg-down 6px 0
+    box-shadow: @lg-down 0 0 1px rgba(0, 4, 2, 0.1)
+    z-index: 3
+    border-radius: 0 0 15px 0
+
+    &.open
+      display: block
+
+    &-list
+      box: vertical @lg horizontal center space-between
+
+    &-item
+
+    &-link
+      text-decoration: none
+      text: 700 15px $text-dark-color @lg 16px
+      white-space: nowrap
+      padding: @lg-down 10px 23px
+      display: block
+
+      &:hover
+        text-decoration: underline
+
+    &-icon
+      margin-bottom: -3px
+      margin-left: 15px
+
+    &-footer
+      border-top: 1px solid $border-color
+      padding: 20px 23px 18px
+      margin-top: 10px
+      display: block @lg none
+
+    &-phone
+      text: 700 16px $text-dark-color
+      text-decoration: none
+      margin-bottom: 10px
+      display: block
+
+  &__logo
+    size: 122px @md 172px @lg 168px
+    background: #fff resolve("logo.png") no-repeat center
+    background-position-y: 41px @md 61px @lg 49px
+    background-size: 65px @md 94px @lg 94px
+    position: absolute 0 null null 50%
+    border-radius: 50%
+    transform: translate(-50%, -28%) @lg translate(-50%, -17%)
+
+  &__panel
+    box: center
+
+  &__phone
+    text-decoration: none
+    text: 700 16px $text-dark-color @lg 18px
+    margin-right: 28px
+    display: @md-down none
+
+    &:hover
+      text-decoration: underline
+
+  &__btn
+    text: 16px
+    margin-right: 25px
+    display: @xl-down none
+
+  &__basket
+    display: block
+
+    &-wrapper
+      box: vertical center @md horizontal
+      position: relative
+      cursor: pointer
+      padding: 8px 10px 5px
+      margin: 0 -10px -5px @md -5px -10px -5px
+      border-radius: 4px
+      user-select: none
+      transition: $transition
+      -webkit-tap-highlight-color: transparent
+
+      &:hover, &.open
+        background: @md #f7f7f7
+
+    &-number
+      border: 1px $text-dark-color solid
+      size: 24px 17px @md 29px 25px
+      text: 700 11px 15px center @md 12px 25px
+      margin-right: 0 @md 17px
+      position: relative
+      cursor: pointer
+
+      &:before
+        content: ""
+        display: block
+        size: 9px 7px @md 11px
+        border: 2px $text-dark-color solid
+        border-radius: 50%
+        position: absolute null 0 null 0
+        top: -8px @md -11px
+        clip: rect(0 15px 6px 0) @md rect(0 15px 8px 0)
+        margin: auto
+        opacity: .8
+
+    &-text
+      text: 11px
+      margin-bottom: 1px
+      margin-top: -3px
+      display: @md-down none
+
+    &-price
+      text: 12px #838383 right
+
+  &__popup
+    position: absolute null 0 null null
+    top: 57px @md 59px
+    background: #fff
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3)
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .1))
+    border-radius: 3px
+    display: none
+    max-width: 98vw
+
+    &.open
+      display: block
+
+    &:before
+      content: ""
+      size: 0
+      border-style: solid
+      border-width: 0 10px 10px 10px
+      border-color: transparent transparent #ffffff transparent
+      position: absolute -10px null null null
+      right: 15px @md 77px
+
+    &-close
+      cursor: pointer
+      position: absolute 13px 13px null null
+      opacity: .7
+
+      &:hover
+        opacity: 1
+
+    &-list
+      padding: 30px 20px
+
+    &-item
+      box: center
+
+      & + &
+        margin-top: 25px
+
+    &-img
+      display: block
+      max-width: 50px @md 100px
+
+      &-wrapper
+        margin-right: 25px
+
+    &-detail
+      width: 100%
+
+    &-text
+      margin-right: 14px @md 17px
+
+    &-title
+      text: 16px 1.2 $text-dark @md 18px
+      text-decoration: none
+
+    &-price
+      @extend .catalog__item-price
+      text: 400 20px $text-dark !important
+      margin: 0 0 0 auto !important
+
+      &-rub
+        @extend .catalog__item-price-rub
+
+    &-wrapper
+      box: center
+      margin-top: 16px
+
+    &-footer
+      box: center middle
+      padding: 16px 20px @sm 20px
+      white-space: nowrap
+      border-top: 1px solid $border-color
+      flex-wrap: @sm-down wrap
+
+    &-total
+      @extend .catalog__item-price
+      margin: 0 @sm 0 70px 0 0 !important
+
+      &-rub
+        @extend .catalog__item-price-rub
+
+    .btn
+      width: @sm-down 100%
+      min-width: @sm-down 300px @xs-down 80vw
+      margin-top: @sm-down 18px

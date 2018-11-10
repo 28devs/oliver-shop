@@ -1,0 +1,95 @@
+.advantages
+  margin: 35px 0 @sm 50px 0
+  padding: 45px 0 80px @md 80px 0
+  padding-bottom: 80px @sm 269px @md 80px
+  background: resolve("advantages/bg.svg") center top / cover
+  position: relative
+
+  &:before
+    content: ""
+    display: block
+    position: absolute -4px null null -4px
+    background: resolve("decorate/lines-2.png") no-repeat left top / 80%
+    size: size("decorate/lines-2.png")
+    transform: translateY(-75%)
+    display: none
+
+  &__title
+    text: center
+
+  &__list
+    box: wrap middle @lg space-between
+    margin-top: 20px @sm 40px @md 50px
+
+  &__item
+    box: vertical space-between
+    width: 50% @md 34% @lg 25%
+    position: relative
+
+    &:nth-child(1)
+      ^^&__bg
+        background: svg-load("advantages/bg-1.svg") no-repeat center / contain
+        top: @lg 30px
+        margin: @md-down * -30px * -10px
+
+    &:nth-child(2)
+      top: 110px @sm 250px @md 0
+
+      ^^&__bg
+        background: svg-load("advantages/bg-2.svg") no-repeat center / contain
+        margin: @md-down * -10px * -30px
+
+    &:nth-child(3)
+      ^^&__bg
+        background: svg-load("advantages/bg-3.svg") no-repeat center / contain
+        right: @xl -30px
+        top: @lg -10px
+        margin: @md-down * -30px * -10px
+
+    &:nth-child(4)
+      top: 124px @sm 250px @md 0
+
+      ^^&__bg
+        background: svg-load("advantages/bg-4.svg") no-repeat center / contain
+        top: @lg 20px
+        padding-top: 44px @md 77px
+        margin: @md-down * -10px * -23px
+
+      ^^&__child
+        margin-bottom: 10px @sm 40px
+        max-width: 24vw @sm 100px @md 100%
+
+        &-wrapper
+          position: @sm-down relative -40px null null null
+
+  &__bg
+    height: 205px @md 320px
+    padding: * 28px @md * 60px
+    box: vertical center
+    margin: @md 0 -20px
+    position: relative
+    padding-top: 34px @md 57px
+
+  &__icon
+    margin-bottom: 10px @md 20px
+    max-width: 36px @md 58px @lg 58px @xl 100%
+
+  &__text
+    text: 12px 1.2 #fff center @md 15px @xl 16px
+
+  &__child
+    display: block
+    margin: 0 auto
+    transform1: perspective(400px) rotateY(18deg)
+    max-width: 30vw @sm 130px @md 100%
+
+    &-wrapper
+
+      &:after
+        content: ""
+        display: block
+        background: resolve("advantages/shadow.png") no-repeat center / contain
+        height: 68px
+        max-width: 80px @sm 100%
+        margin-top: -15px
+        margin: * auto
